@@ -1,0 +1,33 @@
+.title {
+    font-size: 4rem;
+    color: #252525;
+}
+
+.order {
+    &__item {
+        display: flex;
+        padding: 3.125rem;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #252525;
+        justify-content: space-around;
+        background-color: #D9D9D9;
+        border-radius: 1.5625rem;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.button {
+    &__delete {
+        color: red;
+        cursor: pointer;
+    }
+}
+
+.orders {
+    min-height: 84.3vh;
+    padding-bottom: 1rem;
+}

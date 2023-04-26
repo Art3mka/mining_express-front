@@ -1,0 +1,17 @@
+.footer {
+    background-color: #212529;
+    color: #fff;
+    &__text {
+        font-size: 3rem;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        &__text {
+            font-size: 2rem;
+        }
+    }
+}

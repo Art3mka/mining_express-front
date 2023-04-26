@@ -1,5 +1,5 @@
 {
-  "homepage": "art3mka.github.io/mining_express-front",
+  "homepage": "http://art3mka.github.io/mining_express-front",
   "name": "mining_express-front",
   "version": "0.1.0",
   "private": true,
@@ -12,8 +12,8 @@
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
-    "react-scripts": "^2.1.3",
-    "sass": "^1.62.1",
+    "react-scripts": "^5.0.1",
+    "reactstrap": "^9.1.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "sass": "^1.62.1"
   }
 }
