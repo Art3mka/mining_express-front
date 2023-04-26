@@ -1,16 +1,17 @@
 {
-  "main.css": "/mining_express-front/static/css/main.3826c147.chunk.css",
-  "main.js": "/mining_express-front/static/js/main.ff9ec113.chunk.js",
-  "main.js.map": "/mining_express-front/static/js/main.ff9ec113.chunk.js.map",
-  "static/js/1.3c11774c.chunk.js": "/mining_express-front/static/js/1.3c11774c.chunk.js",
-  "static/js/1.3c11774c.chunk.js.map": "/mining_express-front/static/js/1.3c11774c.chunk.js.map",
-  "static/js/2.6422faee.chunk.js": "/mining_express-front/static/js/2.6422faee.chunk.js",
-  "static/js/2.6422faee.chunk.js.map": "/mining_express-front/static/js/2.6422faee.chunk.js.map",
-  "runtime~main.js": "/mining_express-front/static/js/runtime~main.c8722c8b.js",
-  "runtime~main.js.map": "/mining_express-front/static/js/runtime~main.c8722c8b.js.map",
-  "static/media/logo.svg": "/mining_express-front/static/media/logo.06e73328.svg",
-  "static/css/main.3826c147.chunk.css.map": "/mining_express-front/static/css/main.3826c147.chunk.css.map",
-  "index.html": "/mining_express-front/index.html",
-  "precache-manifest.1ca100a0141835766758850cc783cb2c.js": "/mining_express-front/precache-manifest.1ca100a0141835766758850cc783cb2c.js",
-  "service-worker.js": "/mining_express-front/service-worker.js"
+  "files": {
+    "main.css": "/mining_express-front/static/css/main.c67ab705.css",
+    "main.js": "/mining_express-front/static/js/main.ef44925d.js",
+    "static/media/Contacts_bg.png": "/mining_express-front/static/media/Contacts_bg.be0715afae17129d025a.png",
+    "static/media/user_icon.svg": "/mining_express-front/static/media/user_icon.882d45ab391e0d061d6f61adddf7fa48.svg",
+    "static/media/phone_icon.svg": "/mining_express-front/static/media/phone_icon.b39aa4ca4b55eb5181e05cc2e01e6fd5.svg",
+    "static/media/rule_draft_icon.svg": "/mining_express-front/static/media/rule_draft_icon.5e0bd9e84af209daea32efec65eb8a33.svg",
+    "index.html": "/mining_express-front/index.html",
+    "main.c67ab705.css.map": "/mining_express-front/static/css/main.c67ab705.css.map",
+    "main.ef44925d.js.map": "/mining_express-front/static/js/main.ef44925d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c67ab705.css",
+    "static/js/main.ef44925d.js"
+  ]
 }
