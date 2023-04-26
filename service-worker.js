@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "art3mka.github.io/mining_express-front/precache-manifest.e88c4c0526e2bbfe8837bb9e20269372.js"
+  "/mining_express-front/precache-manifest.1ca100a0141835766758850cc783cb2c.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("art3mka.github.io/mining_express-front/index.html", {
+workbox.routing.registerNavigationRoute("/mining_express-front/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
