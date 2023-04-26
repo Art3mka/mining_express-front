@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import styles from './NavMenu.module.scss'
 import user from '../../img/icons/user_icon.svg'
 import phone from '../../img/icons/phone_icon.svg'
-import rule from '../../img/icons/rule_draft_icon.svg'
+import rules from '../../img/icons/rule_draft_icon.svg'
+import logout from '../../img/icons/logout_icon.png'
+import orders from '../../img/icons/orders_icon.png'
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
@@ -44,7 +46,7 @@ export class NavMenu extends Component {
               </NavItem>
               <NavItem>
                 <NavLink tag={Link} className="text-white fs-5 fw-bold me-3" to="/">
-                  <img className={styles.nav__icon} src={rule} alt="rule_icon" />
+                  <img className={styles.nav__icon} src={rules} alt="rule_icon" />
                   <span className={styles.navlink__text}>Правила</span>
                 </NavLink>
               </NavItem>
@@ -52,11 +54,11 @@ export class NavMenu extends Component {
                 {this.props.isAuth ?
                   <div className='d-flex'>
                     <NavLink tag={Link} className="text-white fs-5 fw-bold me-3" to="/orders">
-                      <img className={styles.nav__icon} src={user} alt="user_icon" />
+                      <img className={styles.nav__icon} src={orders} alt="orders_icon" />
                       <span className={styles.navlink__text}>Заказы</span>
                     </NavLink>
                     <NavLink onClick={e => this.exitHandler(e)} tag={Link} className="text-white fs-5 fw-bold" to="/">
-                      <img className={styles.nav__icon} src={user} alt="user_icon" />
+                      <img className={styles.nav__icon} src={logout} alt="logout_icon" />
                       <span className={styles.navlink__text}>Выход</span>
                     </NavLink>
                   </div>
