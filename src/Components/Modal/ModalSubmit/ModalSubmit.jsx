@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './ModalSubmit.module.scss'
 
-const ModalSubmit = ({ token, orderId, active, setActive }) => {
+const ModalSubmit = ({ token, orderId, active, setActive, setVersion }) => {
 
     const onSubmitHandler = async (e) => {
         e.preventDefault()
-        const deleteRequest = `http://199.247.18.191:7777/api/orders/cancel?orderToDeleteId=${orderId}`
         setActive(false)
+        const deleteRequest = `http://199.247.18.191:7777/api/orders/cancel?orderToDeleteId=${orderId}`
         await fetch(deleteRequest, {
             method: 'DELETE',
             headers: {
@@ -16,6 +16,7 @@ const ModalSubmit = ({ token, orderId, active, setActive }) => {
         })
             // .then(res => res.json())
             .then(res => console.log(res))
+            .then(setVersion(v=>v+1))
     }
 
     return (

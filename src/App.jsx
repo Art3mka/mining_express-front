@@ -4,7 +4,7 @@ import Layout from './Components/Layout/Layout';
 import Home from './Components/Home';
 import AuthForm from './Components/AuthForm/AuthForm';
 import OrderForm from './Components/OrderForm/OrderForm';
-import './index.css';
+import './index.scss';
 
 const App = () => {
 
@@ -35,10 +35,10 @@ const App = () => {
   }
 
   if (!isLoaded) {
-    return <div>Загрузка...</div>;
+    return <div className='loader'><div className='loader__text'>Загрузка</div></div>;
   } else {
     return (
-      <Layout isAuth={isAuth}>
+      <Layout isAuth={isAuth} handleAuth={handleAuth}>
         <Routes>
           <Route
             path='/'

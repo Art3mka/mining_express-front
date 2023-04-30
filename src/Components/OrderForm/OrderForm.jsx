@@ -9,11 +9,10 @@ const OrderForm = ({ token }) => {
     const [orders, setOrders] = useState([])
     const [modalConfirmActive, setModalConfirmActive] = useState(false);
     const [orderId, setOrderID] = useState(0);
-    const [reRender, setReRender] = useState(0);
+    const [version, setVersion] = useState(0)
 
     useEffect(() => {
         const orderRequest = 'http://199.247.18.191:7777/api/orders'
-        console.log(`fetch ${reRender}`)
         fetch(orderRequest, {
             method: 'GET',
             headers: {
@@ -31,7 +30,7 @@ const OrderForm = ({ token }) => {
             .catch(e => {
                 console.log('e', e)
             })
-    }, [reRender])
+    }, [version])
 
     // const deleteHandler = async (id) => {
     //     let x = 0
@@ -58,7 +57,9 @@ const OrderForm = ({ token }) => {
     }
 
     if (!isLoaded) {
-        return <div>Загрузка...</div>;
+        return <div className='loader'>
+            <div className='loader__text'>Загрузка</div>
+        </div>;
     } else {
         return (
             <div className={styles.orders}>
@@ -80,7 +81,7 @@ const OrderForm = ({ token }) => {
                         <div>Заказов нет</div>
                     }
                 </Container>
-                <ModalSubmit token={token} orderId={orderId} active={modalConfirmActive} setActive={setModalConfirmActive}/>
+                <ModalSubmit token={token} orderId={orderId} active={modalConfirmActive} setActive={setModalConfirmActive} setVersion={setVersion} />
             </div>
         )
     }

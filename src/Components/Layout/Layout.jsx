@@ -1,12 +1,13 @@
 import React from 'react'
-import {NavMenu} from '../NavMenu/NavMenu';
+import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import styles from './Layout.module.scss'
 
-const Layout = ({children, isAuth}) => {
+
+const Layout = ({children, isAuth, handleAuth}) => {
     return (
         <div className={styles.layout}>
-            <NavMenu isAuth={isAuth}/>
+            <Nav isAuth={isAuth} handleAuth={handleAuth}/>
             {children}
             <Footer />
         </div>

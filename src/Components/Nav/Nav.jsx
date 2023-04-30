@@ -1,42 +1,33 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react'
 import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import styles from './NavMenu.module.scss'
+import styles from './Nav.module.scss'
 import user from '../../img/icons/user_icon.svg'
 import phone from '../../img/icons/phone_icon.svg'
 import rules from '../../img/icons/rule_draft_icon.svg'
 import logout from '../../img/icons/logout_icon.png'
 import orders from '../../img/icons/orders_icon.png'
 
-export class NavMenu extends Component {
-  static displayName = NavMenu.name;
+const Nav = ({isAuth, handleAuth}) => {
 
-  constructor(props) {
-    super(props);
+    const [isOpen, setIsOpen] = useState(false)
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
-  }
+    const toggleNavbar = () => {
+        setIsOpen(!isOpen)
+    }
 
-  toggleNavbar() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    }); 
-  }
+    const exitHandler = () => {
+        handleAuth(false)
+    }
 
-  exitHandler(e) {
-    this.props.isAuth = false
-  }
 
-  render() {
-    return (
-      <header>
+
+  return (
+    <header>
         <Navbar className="navbar-expand-sm navbar-toggleable-sm bg-dark box-shadow px-3" container='fluid' dark >
           <NavbarBrand className='text-warning fs-2 text-uppercase fw-bold me-0' tag={Link} to="/">Шахтерский Экспресс</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2 bg-secondary" />
-          <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
+          <NavbarToggler onClick={toggleNavbar} className="mr-2 bg-secondary" />
+          <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={isOpen} navbar>
             <ul className="navbar-nav flex-grow">
               <NavItem>
                 <NavLink tag={Link} className="text-white fs-5 fw-bold me-3" to="/">
@@ -51,13 +42,13 @@ export class NavMenu extends Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                {this.props.isAuth ?
+                {isAuth ?
                   <div className='d-flex'>
                     <NavLink tag={Link} className="text-white fs-5 fw-bold me-3" to="/orders">
                       <img className={styles.nav__icon} src={orders} alt="orders_icon" />
                       <span className={styles.navlink__text}>Заказы</span>
                     </NavLink>
-                    <NavLink onClick={e => this.exitHandler(e)} tag={Link} className="text-white fs-5 fw-bold" to="/">
+                    <NavLink onClick={exitHandler} tag={Link} className="text-white fs-5 fw-bold" to="/">
                       <img className={styles.nav__icon} src={logout} alt="logout_icon" />
                       <span className={styles.navlink__text}>Выход</span>
                     </NavLink>
@@ -72,7 +63,8 @@ export class NavMenu extends Component {
             </ul>
           </Collapse>
         </Navbar>
-      </header>
-    );
-  }
+    </header>
+  )
 }
+
+export default Nav

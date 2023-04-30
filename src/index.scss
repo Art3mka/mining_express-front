@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: 'Cuprum', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.loader {
+
+  min-height: 84.4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+      font-size: 2rem;
+      text-transform: uppercase;
+  }
+}

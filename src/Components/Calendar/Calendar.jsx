@@ -15,6 +15,13 @@ const Calendar = ({ className, onChange }) => {
     const year = d.getFullYear()
     const currentDate = `${year}-${month}-${day}`
 
+    const curD = new Date(year, month-1, day)
+    curD.setDate(d.getDate()+6)
+    const dayAfterWeek = zeroFirstFormat(curD.getDate())
+    const monthAfterWeek = zeroFirstFormat(curD.getMonth() + 1)
+    const yearAfterWeek = curD.getFullYear()
+    const dateAfterWeek = `${yearAfterWeek}-${monthAfterWeek}-${dayAfterWeek}`
+
     const [selectedDate, setSelectedDate] = useState(currentDate)
     const [selectedDayId, setSelectedDayId] = useState(dayId)
 
@@ -37,7 +44,7 @@ const Calendar = ({ className, onChange }) => {
     }
 
     return (
-            <input onChange={e => handleDataChange(e)} min={currentDate} value={selectedDate} type="date" className={className}></input>
+            <input onChange={e => handleDataChange(e)} min={currentDate} max={dateAfterWeek} value={selectedDate} type="date" className={className}></input>
     )
 }
 
