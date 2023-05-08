@@ -16,8 +16,6 @@ const Home = ({ routes, isAuth, token }) => {
   const [stops, setStops] = useState([]);
   const [trip, setTrips] = useState({});
 
-  const tripRequest = `http://199.247.18.191:7777/api/trips?RouteId=${selectedRouteId || 1}&DayOfWeekNumber=${selectedDayId}`
-
   useEffect(() => {
     if (selectedRoute) {
       setIsButtonValid(true)
@@ -73,7 +71,7 @@ const Home = ({ routes, isAuth, token }) => {
       <TripsTable isAuth={isAuth} routes={routes} trips={trip} onTripChange={handleTripChange} onDateChange={handleDataChange} onRouteChange={handleRouteChange} onModalConfirmOpen={handleModalConfirmOpen}/>
       <Contacts id="contacts" />
       <Rules id="rules" />
-      <ModalConfirm token={token} stops={stops} date={selectedDate} tripData={selectedTripData} trip={trip} routeId={selectedRouteId} route={selectedRoute} active={modalConfirmActive} setActive={setModalConfirmActive}/>
+      <ModalConfirm token={token} stops={stops} date={selectedDate} tripData={selectedTripData} routeId={selectedRouteId} route={selectedRoute} active={modalConfirmActive} setActive={setModalConfirmActive}/>
     </div>
   )
 }
