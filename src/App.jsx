@@ -10,7 +10,7 @@ const App = () => {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
-  const [token, setToken] = useState('')
+  const [token, setToken] = useState(localStorage.getItem(`token`) || '')
   const [routes, setRoutes] = useState([]);
 
   const routesRequest = `http://199.247.18.191:7777/api/routes`
@@ -25,6 +25,12 @@ const App = () => {
         }
       )
   }, [])
+
+  useEffect(() => {
+    if (token) {
+      setIsAuth(true)
+    }
+  }, [token])
 
   const handleAuth = (state) => {
     setIsAuth(state)

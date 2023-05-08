@@ -28,7 +28,7 @@ const OrderForm = ({ token }) => {
                 }
             )
             .catch(e => {
-                console.log('e', e)
+                console.error('e', e)
             })
     }, [version])
 

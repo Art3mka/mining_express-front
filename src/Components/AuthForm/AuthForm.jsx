@@ -15,7 +15,6 @@ const AuthForm = ({handleAuth, handleToken}) => {
     const [clientPhoneError, setClientPhoneError] = useState('Введите номер телефона!')
     const [authCodeError, setAuthCodeError] = useState('Введите код из SMS!')
     const [accessToken, setAccessToken] = useState('')
-    const [isAuth, setIsAuth] = useState(false)
     const [data, setData] = useState({
         phoneNumber: '',
     })
@@ -82,7 +81,7 @@ const AuthForm = ({handleAuth, handleToken}) => {
             }
         })
         .then(response => {
-            if(response.status == 200) {
+            if(response.status === 200) {
                 handleAuth(true)
                 navigate("/")
             } else {
@@ -109,7 +108,8 @@ const AuthForm = ({handleAuth, handleToken}) => {
             result => {
                 token = result.accessToken
                 setAccessToken(result.accessToken)  
-                handleToken(result.accessToken)              
+                handleToken(result.accessToken)
+                localStorage.setItem(`token`, result.accessToken)              
             },
         ).catch(e => {
             console.log('e', e)
@@ -123,7 +123,7 @@ const AuthForm = ({handleAuth, handleToken}) => {
                     'Access-Control-Allow-Origin': '*'
                 }
             }).then(response => {
-                if (response.status == 200) {
+                if (response.status === 200) {
                     fetch(authUrl, {
                         method: 'POST',
                         body: JSON.stringify(data),
@@ -136,7 +136,8 @@ const AuthForm = ({handleAuth, handleToken}) => {
                         result => {
                             token = result.accessToken
                             setAccessToken(result.accessToken)
-                            handleToken(result.accessToken) 
+                            handleToken(result.accessToken)
+                            localStorage.setItem(`token`, result.accessToken)
                         },
                     ).catch(e => {
                         console.log('e', e)

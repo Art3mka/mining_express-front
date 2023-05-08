@@ -61,7 +61,7 @@ const TripsTable = ({ isAuth, routes, trips, onTripChange, onDateChange, onRoute
                                 trips.map((trip) => (
                                     <tr className='w-100 d-flex justify-content-between'>
                                         <label style={{cursor: 'pointer'}} className='d-flex flex-grow-1 justify-content-between'>
-                                            <input value={JSON.stringify({ tripId: trip.tripId, arrivalTimeId: trip.departureTime })} type="radio" name="tripId" id="" onClick={e => { onTripChange(e.target.value) }} />
+                                            <input value={JSON.stringify({ tripId: trip.tripId, arrivalTime: trip.arrivalTime, departureTime: trip.departureTime })} type="radio" name="tripId" id="" onClick={e => { onTripChange(e.target.value) }} />
                                             <div className='w-100'>{trip.departureTime}</div>
                                             <div className='w-100'>{trip.arrivalTime}</div>
                                         </label>

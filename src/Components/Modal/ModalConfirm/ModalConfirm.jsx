@@ -18,6 +18,8 @@ const ModalConfirm = ({ active, setActive, route, routeId, date, dayId, stops, t
     const [clientSeatsError, setClientSeatsError] = useState('Выберите кол-во мест!')
     const [clientComment, setClientComment] = useState('')
     
+    
+
     useEffect(() => {
         if(clientPhoneError || clientSeatsError || clientStopError) {
             setFormValid(false)
@@ -110,7 +112,9 @@ const ModalConfirm = ({ active, setActive, route, routeId, date, dayId, stops, t
                         {(clientPhoneDirty && clientPhoneError) && <div style={{color: 'red'}}>{clientPhoneError}</div>}
                         <input onChange={e => phoneHandler(e)} value={clientPhone} onBlur={e => blurHandler(e)} name='clientPhone' className='w-100 rounded-pill text-dark fw-bold border border-1 py-2 px-4 mb-3' type="text" placeholder="№ телефона"/>
                         <Stops 
-                            departureTime={tripData ? JSON.parse(tripData).arrivalTimeId : ''}
+                            tripData={tripData ? tripData : ''}
+                            departureTime={tripData ? JSON.parse(tripData).departureTime : ''}
+                            arrivalTime={tripData ? JSON.parse(tripData).arrivalTime : ''}
                             stops={stops}
                             dayId={dayId}
                             routeId={routeId}
