@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mining_express-front/static/css/main.c67ab705.css",
-    "main.js": "/mining_express-front/static/js/main.a809731f.js",
+    "main.css": "/mining_express-front/static/css/main.ff168c53.css",
+    "main.js": "/mining_express-front/static/js/main.a7a4b8e6.js",
     "static/media/Contacts_bg.png": "/mining_express-front/static/media/Contacts_bg.be0715afae17129d025a.png",
     "static/media/user_icon.svg": "/mining_express-front/static/media/user_icon.882d45ab391e0d061d6f61adddf7fa48.svg",
     "static/media/orders_icon.png": "/mining_express-front/static/media/orders_icon.9e659c116310ef78d91b.png",
@@ -9,11 +9,11 @@
     "static/media/phone_icon.svg": "/mining_express-front/static/media/phone_icon.b39aa4ca4b55eb5181e05cc2e01e6fd5.svg",
     "static/media/rule_draft_icon.svg": "/mining_express-front/static/media/rule_draft_icon.5e0bd9e84af209daea32efec65eb8a33.svg",
     "index.html": "/mining_express-front/index.html",
-    "main.c67ab705.css.map": "/mining_express-front/static/css/main.c67ab705.css.map",
-    "main.a809731f.js.map": "/mining_express-front/static/js/main.a809731f.js.map"
+    "main.ff168c53.css.map": "/mining_express-front/static/css/main.ff168c53.css.map",
+    "main.a7a4b8e6.js.map": "/mining_express-front/static/js/main.a7a4b8e6.js.map"
   },
   "entrypoints": [
-    "static/css/main.c67ab705.css",
-    "static/js/main.a809731f.js"
+    "static/css/main.ff168c53.css",
+    "static/js/main.a7a4b8e6.js"
   ]
 }
